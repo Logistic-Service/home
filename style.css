@@ -39,6 +39,8 @@ ul {
 .nav-links {
   display: flex;
   gap: 1.5rem;
+  flex-direction: row; /* Ensure horizontal even on small screens */
+  flex-wrap: wrap;
 }
 
 .nav-links a {
@@ -75,6 +77,23 @@ ul {
 .hero p {
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
+}
+
+/* Image above button wrapper */
+.img-button-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1.2rem;
+}
+
+/* Responsive images */
+.hero-img,
+.cta-img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+  border-radius: 8px;
 }
 
 /* Sections */
@@ -156,15 +175,16 @@ footer {
 
 /* Responsive Nav */
 @media (max-width: 768px) {
-  .nav-links {
-    flex-direction: column;
-    gap: 0.8rem;
-    margin-top: 1rem;
-  }
-
   .navbar {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: row; /* Keep horizontal layout */
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
   }
 
   .hero h1 {
